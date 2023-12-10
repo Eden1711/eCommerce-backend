@@ -1,10 +1,13 @@
 "use strict";
 
 const { default: mongoose } = require("mongoose");
+const {
+  db: { url },
+} = require("../configs/config.mongodb");
 const { countConnect } = require("../helpers/check.connect");
 
-const connectString =
-  "mongodb+srv://Eden:xYXfI655HmoaR8ad@cluster0.w7wg2gp.mongodb.net/shopEden";
+// console.log(db);
+const connectString = `${url}`;
 
 class Database {
   constructor() {
