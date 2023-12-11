@@ -14,13 +14,8 @@ app.use(compression());
 require("./database/init.mongodb");
 const { checkOverLoad } = require("./helpers/check.connect");
 // checkOverLoad();
-// init routes
-app.get("/", (req, res, next) => {
-  return res.status(200).json({
-    message: "Hello",
-  });
-});
 
-// handling error
+// init routes
+app.use("", require("./routes/index"));
 
 module.exports = app;
