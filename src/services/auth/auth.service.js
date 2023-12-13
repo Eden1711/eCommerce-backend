@@ -44,8 +44,6 @@ const AuthService = {
           },
         });
 
-        console.log({ privateKey, publicKey });
-
         const publicKeyString = await KeyTokenService.createKeyToken({
           userId: newShop._id,
           publicKey,
@@ -65,8 +63,6 @@ const AuthService = {
           publicKeyObject,
           privateKey
         );
-
-        console.log(tokens, "success");
 
         return {
           code: 201,
@@ -119,8 +115,6 @@ const AuthService = {
         const publicKey = crypto.randomBytes(64).toString("hex");
         const privateKey = crypto.randomBytes(64).toString("hex");
 
-        console.log({ privateKey, publicKey });
-
         const keyStore = await KeyTokenService.createKeyTokenV2({
           userId: newShop._id,
           publicKey,
@@ -141,8 +135,6 @@ const AuthService = {
           publicKey,
           privateKey
         );
-
-        console.log(tokens, "success");
 
         return {
           code: 201,

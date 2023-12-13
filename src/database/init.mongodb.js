@@ -6,7 +6,6 @@ const {
 } = require("../configs/config.mongodb");
 const { countConnect } = require("../helpers/check.connect");
 
-// console.log(db);
 const connectString = `${url}`;
 
 class Database {
