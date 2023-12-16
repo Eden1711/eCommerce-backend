@@ -14,15 +14,22 @@ const KeyTokenService = {
       return error;
     }
   },
-  createKeyTokenV2: async ({ userId, publicKey, privateKey }) => {
+  createKeyTokenV2: async ({ userId, publicKey, privateKey, refreshToken }) => {
     try {
-      const token = await keytokenModel.create({
-        user: userId,
-        publicKey,
-        privateKey,
-      });
+      // const token = await keytokenModel.create({
+      //   user: userId,
+      //   publicKey,
+      //   privateKey,
+      // });
+      // return token ? token.publicKey : null;
 
-      return token ? token.publicKey : null;
+      const tokens = await keytokenModel.findOneAndUpdate(
+        { user: userId },
+        { publicKey, privateKey, refreshToken, refreshTokenUsed: [] },
+        { upsert: true }
+      );
+
+      return tokens ? tokens.publicKey : null;
     } catch (error) {
       return error;
     }
