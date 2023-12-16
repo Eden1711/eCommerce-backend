@@ -178,6 +178,11 @@ const AuthService = {
       tokens,
     };
   },
+  logout: async (keyStore) => {
+    const delKey = await KeyTokenService.removeKeyById(keyStore._id);
+
+    return delKey;
+  },
 };
 
 module.exports = AuthService;

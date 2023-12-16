@@ -13,6 +13,12 @@ const AuthController = {
       metadata: await AuthService.login(req.body),
     }).send(res);
   },
+  logout: async (req, res, next) => {
+    new SuccessResponse({
+      message: "logout success",
+      metadata: await AuthService.logout(req.keyStore),
+    }).send(res);
+  },
 };
 
 module.exports = AuthController;

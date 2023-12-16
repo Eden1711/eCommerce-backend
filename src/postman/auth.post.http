@@ -20,3 +20,11 @@ Content-Type: application/json
     "email": "shopeden@gmail.com",
     "password": "112233"
 }
+
+
+### logout
+POST {{url_dev}}/shop/logout
+Content-Type: application/json
+x-client-id: 657db56b7b4faa467386209c 
+authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTdkYjU2YjdiNGZhYTQ2NzM4NjIwOWMiLCJlbWFpbCI6InNob3BlZGVuQGdtYWlsLmNvbSIsImlhdCI6MTcwMjc0MTc1MSwiZXhwIjoxNzAyOTE0NTUxfQ.rp9HoNi66c1iIZcV_p3Qk9zwajlWCN_GqHJEcr53Hds
+
